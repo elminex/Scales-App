@@ -1,0 +1,46 @@
+.signs {
+    text-align: center;
+}
+.signs__title {
+    margin-bottom: 20px;
+}
+
+.info {
+    font-size: 2rem;
+}
+
+.signs__key-overlay { position: relative; max-width: 500px; margin: 0 auto;}
+
+.signs__key-flats { display: block; width: 100%; height: 100%; }
+
+.signs__flat-1 { position: absolute; top: 24%; left: 26%; width: 7%; height: 40%; opacity: 0.8; }
+
+.signs__flat-2 { position: absolute; top: 5%; left: 33%; width: 7%; height: 40%;  opacity: 0.8; }
+
+.signs__flat-3 { position: absolute; top: 30%; left: 40%; width: 7%; height: 40%; opacity: 0.8; }
+
+.signs__flat-4 { position: absolute; top: 11%; left: 47%; width: 7%; height: 40%; opacity: 0.8; }
+
+.signs__flat-5 { position: absolute; top: 37%; left: 54%; width: 7%; height: 40%; opacity: 0.8; }
+
+.signs__flat-6 { position: absolute; top: 16%; left: 61%; width: 7%; height: 40%; opacity: 0.8; }
+
+.signs__flat-7 { position: absolute; top: 41%; left: 68%; width: 7%; height: 40%; opacity: 0.8; }
+
+.signs__key-sharps { display: block; width: 100%; height: 100%; }
+
+.signs__sharp-1 { position: absolute; top: 6%; left: 27%; width: 8%; height: 40%; opacity: 0.8; }
+
+.signs__sharp-2 { position: absolute; top: 26%; left: 35%; width: 8%; height: 40%; opacity: 0.8; }
+
+.signs__sharp-3 { position: absolute; top: 0; left: 43%; width: 8%; height: 40%; opacity: 0.8; }
+
+.signs__sharp-4 { position: absolute; top: 20%; left: 51%; width: 8%; height: 40%; opacity: 0.8; }
+
+.signs__sharp-5 { position: absolute; top: 39%; left: 59%; width: 8%; height: 40%; opacity: 0.8; }
+
+.signs__sharp-6 { position: absolute; top: 13%; left: 67%; width: 8%; height: 40%; opacity: 0.8; }
+
+.signs__sharp-7 { position: absolute; top: 33%; left: 75%; width: 8%; height: 40%; opacity: 0.8; }
+
+.selected { background-color: #ECE4B7; }

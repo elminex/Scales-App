@@ -1,0 +1,89 @@
+.arrow {
+    display:block;
+    position: absolute;
+    width: 5px;
+    height: 40%;
+    border: 4px solid red;
+    top:8%;
+    left:48%;
+    content:'';
+    color:#fff;
+    font-size:60px;
+    z-index:5;
+    border-radius:0;
+}
+.rotation-1 {
+    transform: rotateZ(1824deg);
+    transition: transform 6s ease-in-out;
+    transform-origin: 50% 100%;
+}
+.rotation-2 {
+    transform: rotateZ(1848deg);
+    transition: transform 6s ease-in-out;
+    transform-origin: 50% 100%;
+}
+.rotation-3 {
+    transform: rotateZ(1872deg);
+    transition: transform 6s ease-in-out;
+    transform-origin: 50% 100%;
+}
+.rotation-4 {
+    transform: rotateZ(1896deg);
+    transition: transform 6s ease-in-out;
+    transform-origin: 50% 100%;
+}
+.rotation-5 {
+    transform: rotateZ(1920deg);
+    transition: transform 6s ease-in-out;
+    transform-origin: 50% 100%;
+}
+.rotation-6 {
+    transform: rotateZ(1944deg);
+    transition: transform 6s ease-in-out;
+    transform-origin: 50% 100%;
+}
+.rotation-7 {
+    transform: rotateZ(1968deg);
+    transition: transform 6s ease-in-out;
+    transform-origin: 50% 100%;
+}
+.rotation-8 {
+    transform: rotateZ(1992deg);
+    transition: transform 6s ease-in-out;
+    transform-origin: 50% 100%;
+}
+.rotation-9 {
+    transform: rotateZ(2016deg);
+    transition: transform 6s ease-in-out;
+    transform-origin: 50% 100%;
+}
+.rotation-10 {
+    transform: rotateZ(2040deg);
+    transition: transform 6s ease-in-out;
+    transform-origin: 50% 100%;
+}
+.rotation-11 {
+    transform: rotateZ(2064deg);
+    transition: transform 6s ease-in-out;
+    transform-origin: 50% 100%;
+}
+.rotation-12 {
+    transform: rotateZ(2088deg);
+    transition: transform 6s ease-in-out;
+    transform-origin: 50% 100%;
+}
+.rotation-13 {
+    transform: rotateZ(2112deg);
+    transition: transform 6s ease-in-out;
+    transform-origin: 50% 100%;
+}
+.rotation-14 {
+    transform: rotateZ(2136deg);
+    transition: transform 6s ease-in-out;
+    transform-origin: 50% 100%;
+}
+.rotation-15 {
+    transform: rotateZ(2160deg);
+    transition: transform 6s ease-in-out;
+    transform-origin: 50% 100%;
+}
