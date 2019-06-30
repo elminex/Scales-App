@@ -19,88 +19,48 @@
     transform-origin: 50% 100%;
     
 }
-
-@for $i from 1 through 15 {
-    $degrees: 1824;
-    .rotation-#{$i} {
-        @include rotation($degrees);
-    }
-    $degrees: $degrees +24;
-}
-/*
 .rotation-1 {
-    transform: rotateZ(1824deg);
-    transition: transform 6s ease-in-out;
-    transform-origin: 50% 100%;
+    @include rotation(1824deg);
 }
 .rotation-2 {
-    transform: rotateZ(1848deg);
-    transition: transform 6s ease-in-out;
-    transform-origin: 50% 100%;
+    @include rotation(1848deg);
 }
 .rotation-3 {
-    transform: rotateZ(1872deg);
-    transition: transform 6s ease-in-out;
-    transform-origin: 50% 100%;
+    @include rotation(1872deg);
 }
 .rotation-4 {
-    transform: rotateZ(1896deg);
-    transition: transform 6s ease-in-out;
-    transform-origin: 50% 100%;
+    @include rotation(1896deg);
 }
 .rotation-5 {
-    transform: rotateZ(1920deg);
-    transition: transform 6s ease-in-out;
-    transform-origin: 50% 100%;
+    @include rotation(1920deg);
 }
 .rotation-6 {
-    transform: rotateZ(1944deg);
-    transition: transform 6s ease-in-out;
-    transform-origin: 50% 100%;
+    @include rotation(1944deg);
 }
 .rotation-7 {
-    transform: rotateZ(1968deg);
-    transition: transform 6s ease-in-out;
-    transform-origin: 50% 100%;
+    @include rotation(1968deg);
 }
 .rotation-8 {
-    transform: rotateZ(1992deg);
-    transition: transform 6s ease-in-out;
-    transform-origin: 50% 100%;
+    @include rotation(1992deg);
 }
 .rotation-9 {
-    transform: rotateZ(2016deg);
-    transition: transform 6s ease-in-out;
-    transform-origin: 50% 100%;
+    @include rotation(2016deg);
 }
 .rotation-10 {
-    transform: rotateZ(2040deg);
-    transition: transform 6s ease-in-out;
-    transform-origin: 50% 100%;
+    @include rotation(2040deg);
 }
 .rotation-11 {
-    transform: rotateZ(2064deg);
-    transition: transform 6s ease-in-out;
-    transform-origin: 50% 100%;
+    @include rotation(2064deg);
 }
 .rotation-12 {
-    transform: rotateZ(2088deg);
-    transition: transform 6s ease-in-out;
-    transform-origin: 50% 100%;
+    @include rotation(2088deg);
 }
 .rotation-13 {
-    transform: rotateZ(2112deg);
-    transition: transform 6s ease-in-out;
-    transform-origin: 50% 100%;
+    @include rotation(2112deg);
 }
 .rotation-14 {
-    transform: rotateZ(2136deg);
-    transition: transform 6s ease-in-out;
-    transform-origin: 50% 100%;
+    @include rotation(2136deg);
 }
 .rotation-15 {
-    transform: rotateZ(2160deg);
-    transition: transform 6s ease-in-out;
-    transform-origin: 50% 100%;
+    @include rotation(2160deg);
 }
-*/
