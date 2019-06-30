@@ -1,19 +1,27 @@
 import React from 'react';
-import './Form.css';
+import './Form.scss';
 
-class Form extends React.Component {
-  render() {
-    return (
-      <>
-        <form className="form">
-          <label className="form__input-label">Maksymalna ilość znaków:<input className="form__input-number" type="number" max="7" min="0" placeholder="5" onChange={this.props.countChange} /></label>
-          <label className="form__input-label">Wszystkie znaki<input className="form__input" type="radio" name="znaki" value="all" defaultChecked onChange={this.props.typeChange} /></label>
-          <label className="form__input-label">Tylko krzyżyki<input className="form__input" type="radio" name="znaki" value="sharps" onChange={this.props.typeChange} /></label>
-          <label className="form__input-label">Tylko bemole<input className="form__input" type="radio" name="znaki" value="flats" onChange={this.props.typeChange} /></label>
-        </form>
-      </>
-    )
-  }
-}
+const Form = ({ countChange, typeChange }) => (
+  <>
+    <form className="form">
+      <label className="form__input-label" htmlFor="AccCount">
+        Maksymalna ilość znaków:
+        <input id="AccCount" className="form__input-number" type="number" max="7" min="0" placeholder="5" onChange={countChange} />
+      </label>
+      <label className="form__input-label" htmlFor="AllAcc">
+        Wszystkie znaki
+        <input id="AllAcc" className="form__input" type="radio" name="znaki" value="all" defaultChecked onChange={typeChange} />
+      </label>
+      <label className="form__input-label" htmlFor="SharpsOnly">
+        Tylko krzyżyki
+        <input id="SharpsOnly" className="form__input" type="radio" name="znaki" value="sharps" onChange={typeChange} />
+      </label>
+      <label className="form__input-label" htmlFor="FlatsOnly">
+        Tylko bemole
+        <input id="FlatsOnly" className="form__input" type="radio" name="znaki" value="flats" onChange={typeChange} />
+      </label>
+    </form>
+  </>
+);
 
 export default Form;

@@ -7,100 +7,106 @@ import Form from './components/Form';
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.reset = this.reset.bind(this);
+    this.countChangeHandler = this.countChangeHandler.bind(this);
+    this.countChangeHandler = this.countChangeHandler.bind(this);
+    this.getScale = this.getScale.bind(this);
+    this.getUpdate = this.getUpdate.bind(this);
     this.state = {
-      signsType: "all",
+      signsType: 'all',
       signsCount: 5,
       selectedScale: undefined,
       selectedAcc: undefined,
       wheelVisible: true,
+    };
+  }
+
+  setAccidentals(scale) {
+    let scaleAcc;
+    if (scale.sharps === false) {
+      scaleAcc = data.flats.filter((elem, index) => (index <= (scale.flats - 1)));
+    } else {
+      scaleAcc = data.sharps.filter((elem, index) => (index <= (scale.sharps - 1)));
     }
+    return scaleAcc;
   }
-  countChangeHandler(e) {
-    const newValue = e.target.value;
-    this.setState({
-      signsCount: newValue
-    });
+
+  getScale() {
+    const filteredScales = this.accNumber();
+    const random = Math.floor((Math.random() * filteredScales.length));
+    const selectedScale = filteredScales[random];
+    const accidentals = this.setAccidentals(selectedScale);
+    this.setState({ selectedScale, selectedAcc: accidentals });
   }
+
+  getUpdate(value) {
+    this.setState({ wheelVisible: value });
+  }
+
+  accNumber() {
+    const { signsType, signsCount } = this.state;
+    let filteredScales;
+    switch (signsType) {
+      case 'flats':
+        filteredScales = data.scales.filter(element => (
+          element.flats !== false && element.flats <= signsCount));
+        break;
+      case 'sharps':
+        filteredScales = data.scales.filter(element => (
+          element.sharps !== false && element.sharps <= signsCount));
+        break;
+      default:
+        filteredScales = data.scales.filter(element => (
+          element.sharps || element.flats) <= signsCount);
+    }
+    return filteredScales;
+  }
+
   typeChangeHandler(e) {
     if (e.target.checked === true) {
       const newValue = e.target.value;
       this.setState({
         signsType: newValue,
-      })
-    }
-  }
-  accNumber() {
-    let filteredScales;
-    switch (this.state.signsType) {
-      case "flats":
-        filteredScales = data.scales.filter((element) => {
-          if (element.flats !== false && element.flats <= this.state.signsCount) {
-            return element;
-          }
-        });
-        break;
-      case "sharps":
-        filteredScales = data.scales.filter((element) => {
-          if (element.sharps !== false && element.sharps <= this.state.signsCount) {
-            return element;
-          }
-        });
-        break;
-      default:
-        filteredScales = data.scales.filter((element) => {
-          if ((element.sharps || element.flats) <= this.state.signsCount) {
-            return element;
-          }
-        });
-    }
-    return filteredScales;
-  }
-  setAccidentals(scale) {
-    let scaleAcc;
-    if (scale.sharps === false) {
-      scaleAcc = data.flats.filter((elem, index) => {
-        return (index <= (scale.flats - 1))
-      })
-    } else {
-      scaleAcc = data.sharps.filter((elem, index) => {
-        return (index <= (scale.sharps - 1))
       });
     }
-    return scaleAcc;
-  }
-  getScale() {
-    let filteredScales = this.accNumber();
-    let random = Math.floor((Math.random() * filteredScales.length));
-    let selectedScale = filteredScales[random];
-    let accidentals = this.setAccidentals(selectedScale);
-    this.setState({ selectedScale, selectedAcc: accidentals });
   }
 
-  getUpdate(value) {
-    this.setState({ wheelVisible: value })
+  countChangeHandler(e) {
+    const newValue = e.target.value;
+    this.setState({
+      signsCount: newValue,
+    });
   }
+
   reset() {
     this.setState({
-        signsType: "all",
-        signsCount: 5,
-        selectedScale: undefined,
-        selectedAcc: undefined,
-        wheelVisible: true,
-    })
+      signsType: 'all',
+      signsCount: 5,
+      selectedScale: undefined,
+      selectedAcc: undefined,
+      wheelVisible: true,
+    });
   }
 
   render() {
-    const wheelVisible = this.state.wheelVisible;
+    const { wheelVisible, selectedScale, selectedAcc } = this.state;
     let content;
     if (wheelVisible === true) {
-      content =
+      content = (
         <div className="inner-container">
-          <Form countChange={this.countChangeHandler.bind(this)} typeChange={this.typeChangeHandler.bind(this)} />
-          <Wheel getScale={this.getScale.bind(this)} scale={this.state.selectedScale} update={this.getUpdate.bind(this)} />
+          <Form countChange={this.countChangeHandler} typeChange={this.typeChangeHandler} />
+          <Wheel getScale={this.getScale} scale={selectedScale} update={this.getUpdate} />
         </div>
+      );
     } else {
-      content =
-        <Staff signs={this.state.selectedAcc} scale={this.state.selectedScale.name} flats={this.state.selectedScale.flats} reset={this.reset.bind(this)} />
+      content = (
+        <Staff
+          signs={selectedAcc}
+          scale={selectedScale.name}
+          flats={selectedScale.flats}
+          reset={this.reset}
+        />
+      );
     }
     return (
       <div className="container">
@@ -109,7 +115,7 @@ class App extends React.Component {
         </header>
         {content}
       </div>
-    )
+    );
   }
 }
 
