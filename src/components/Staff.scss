@@ -16,118 +16,148 @@
     margin: 0 auto;
 }
 
-.signs__key-flats {
+.signs__key {
     display: block;
     width: 100%;
     height: 100%;
 }
-
-@mixin sign-flat {
+@mixin sign {
+    background: {
+        color: transparent;
+        position: center;
+        repeat: no-repeat;
+        size: 100%;
+    }
     position: absolute;
-    width: 7%;
-    height: 40%;
-    opacity: 0.8;
+    width: 8%;
+    height: 35%;
+    opacity: 0.4;
+    padding: 0;
+    border: none;
+    outline: none;
+    transition: opacity .2s ease-in-out;
+}
+@mixin sign-flat {
+    background: {
+        image: url('./images/flat-no-bg.png');
+    }
+}
+
+@mixin sign-sharp {
+    background: {
+        image: url('./images/sharp-no-bg.png');
+    }
 }
 .signs__flat-1 {
     @include sign-flat;
-    top: 24%;
-    left: 26%;
+    @include sign;
+    top: 29%;
+    left: 30%;
 }
 
 .signs__flat-2 {
     @include sign-flat;
-    top: 5%;
-    left: 33%;
+    @include sign;
+    top: 9%;
+    left: 39%;
 }
 
 .signs__flat-3 {
     @include sign-flat;
-    top: 30%;
-    left: 40%;
+    @include sign;
+    top: 35%;
+    left: 48%;
 }
 
 .signs__flat-4 {
     @include sign-flat;
-    top: 11%;
-    left: 47%;
+    @include sign;
+    top: 16%;
+    left: 57%;
 }
 
 .signs__flat-5 {
     @include sign-flat;
-    top: 37%;
-    left: 54%;
+    @include sign;
+    top: 42%;
+    left: 66%;
 }
 
 .signs__flat-6 {
     @include sign-flat;
-    top: 16%;
-    left: 61%;
+    @include sign;
+    top: 22%;
+    left: 75%;
 }
 
 .signs__flat-7 {
     @include sign-flat;
-    top: 41%;
-    left: 68%;
-}
-
-.signs__key-sharps {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-@mixin sign-sharp {
-    position: absolute;
-    width: 8%;
-    height: 40%;
-    opacity: 0.8;
-    background-color: transparent;
-    border: none;
-    outline: none;
+    @include sign;
+    top: 48%;
+    left: 84%;
 }
 
 .signs__sharp-1 {
     @include sign-sharp;
-    top: 6%;
-    left: 27%;
+    @include sign;
+    top: 8%;
+    left: 30%;
 }
 
 .signs__sharp-2 {
     @include sign-sharp;
-    top: 26%;
-    left: 35%;
+    @include sign;
+    top: 29%;
+    left: 39%;
 }
 
 .signs__sharp-3 {
     @include sign-sharp;
-    top: 0;
-    left: 43%;
+    @include sign;
+    top: 3%;
+    left: 48%;
 }
 
 .signs__sharp-4 {
     @include sign-sharp;
-    top: 20%;
-    left: 51%;
+    @include sign;
+    top: 22%;
+    left: 57%;
 }
 
 .signs__sharp-5 {
     @include sign-sharp;
-    top: 39%;
-    left: 59%;
+    @include sign;
+    top: 43%;
+    left: 66%;
 }
 
 .signs__sharp-6 {
     @include sign-sharp;
-    top: 13%;
-    left: 67%;
+    @include sign;
+    top: 16%;
+    left: 75%;
 }
 
 .signs__sharp-7 {
     @include sign-sharp;
-    top: 33%;
-    left: 75%;
+    @include sign;
+    top: 35%;
+    left: 84%;
 }
 
 .selected {
-    background-color: #ECE4B7;
+    opacity: 1;
+    animation: animate-size .2s;
+}
+@keyframes animate-size {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
 }

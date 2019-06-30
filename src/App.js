@@ -9,7 +9,7 @@ class App extends React.Component {
     super(props);
     this.reset = this.reset.bind(this);
     this.countChangeHandler = this.countChangeHandler.bind(this);
-    this.countChangeHandler = this.countChangeHandler.bind(this);
+    this.typeChangeHandler = this.typeChangeHandler.bind(this);
     this.getScale = this.getScale.bind(this);
     this.getUpdate = this.getUpdate.bind(this);
     this.state = {

@@ -1,7 +1,6 @@
 import React from 'react';
-import sharps from './klucz+krzyżykiS.png';
+import staff from './images/kluczS.png';
 import './Staff.scss';
-import bemole from './klucz+bemoleS.png';
 
 class Staff extends React.Component {
   constructor(props) {
@@ -50,7 +49,7 @@ class Staff extends React.Component {
         <div className="signs">
           <h2>Wylosowana gama to {scale}, kliknij na właściwe znaki</h2>
           <div className="signs__key-overlay">
-            <img className="signs__key-sharps" src={sharps} alt="znaki" />
+            <img className="signs__key" src={staff} alt="Pięciolinia, na której umieszczone są znaki chromatyczne do uzupełnienia." />
             <button type="button" className="signs__sharp-1" onClick={(e) => { if (success === false) { this.clickHandle('fis', e.target); } }} />
             <button type="button" className="signs__sharp-2" onClick={(e) => { if (success === false) { this.clickHandle('cis', e.target); } }} />
             <button type="button" className="signs__sharp-3" onClick={(e) => { if (success === false) { this.clickHandle('gis', e.target); } }} />
@@ -69,8 +68,7 @@ class Staff extends React.Component {
       <div className="signs">
         <h2 className="signs__title">Wylosowana gama to {scale}, kliknij na właściwe znaki</h2>
         <div className="signs__key-overlay">
-          <img className="signs__key-flats" src={bemole} alt="znaki" />
-          <button type="button" className="signs__flat-1" onClick={(e) => { if (success === false) { this.clickHandle('b', e.target); } }} />
+          <img className="signs__key" src={staff} alt="Pięciolinia, na której umieszczone są znaki chromatyczne do uzupełnienia." />          <button type="button" className="signs__flat-1" onClick={(e) => { if (success === false) { this.clickHandle('b', e.target); } }} />
           <button type="button" className="signs__flat-2" onClick={(e) => { if (success === false) { this.clickHandle('es', e.target); } }} />
           <button type="button" className="signs__flat-3" onClick={(e) => { if (success === false) { this.clickHandle('as', e.target); } }} />
           <button type="button" className="signs__flat-4" onClick={(e) => { if (success === false) { this.clickHandle('des', e.target); } }} />
