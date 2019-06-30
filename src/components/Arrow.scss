@@ -12,6 +12,22 @@
     z-index:5;
     border-radius:0;
 }
+
+@mixin rotation($deg) {
+    transform: rotateZ($deg);
+    transition: transform 6s ease-in-out;
+    transform-origin: 50% 100%;
+    
+}
+
+@for $i from 1 through 15 {
+    $degrees: 1824;
+    .rotation-#{$i} {
+        @include rotation($degrees);
+    }
+    $degrees: $degrees +24;
+}
+/*
 .rotation-1 {
     transform: rotateZ(1824deg);
     transition: transform 6s ease-in-out;
@@ -87,3 +103,4 @@
     transition: transform 6s ease-in-out;
     transform-origin: 50% 100%;
 }
+*/
