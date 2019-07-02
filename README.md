@@ -5,13 +5,14 @@ The project was made to improve my skills in React.
 
 ## Technologies
 
-Create-React-App
-Sass
-Css3
+* Create-React-App
+* Sass
+* Css3
 
 ### Using
 
 Working app is available [here](https://elminex.github.io/gamy-react)
+
 Source code is available [here](https://github.com/elminex/gamy-react/tree/source/)
 
 Have fun!
