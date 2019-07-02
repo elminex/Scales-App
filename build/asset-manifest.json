@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/gamy-react/static/css/main.9664b213.chunk.css",
+    "main.js": "/gamy-react/static/js/main.160eb088.chunk.js",
+    "main.js.map": "/gamy-react/static/js/main.160eb088.chunk.js.map",
+    "runtime~main.js": "/gamy-react/static/js/runtime~main.3d482a01.js",
+    "runtime~main.js.map": "/gamy-react/static/js/runtime~main.3d482a01.js.map",
+    "static/js/2.60abf8fa.chunk.js": "/gamy-react/static/js/2.60abf8fa.chunk.js",
+    "static/js/2.60abf8fa.chunk.js.map": "/gamy-react/static/js/2.60abf8fa.chunk.js.map",
+    "index.html": "/gamy-react/index.html",
+    "precache-manifest.60be662ec5a0bc80430b86f9dce7e375.js": "/gamy-react/precache-manifest.60be662ec5a0bc80430b86f9dce7e375.js",
+    "service-worker.js": "/gamy-react/service-worker.js",
+    "static/css/main.9664b213.chunk.css.map": "/gamy-react/static/css/main.9664b213.chunk.css.map",
+    "static/media/kluczS.png": "/gamy-react/static/media/kluczS.f83b41a2.png",
+    "static/media/Arrow.scss": "/gamy-react/static/media/trumpetR+W.af6fae3a.png"
+  }
+}
