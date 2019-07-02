@@ -3,6 +3,7 @@ import Wheel from './components/Wheel';
 import data from './data';
 import Staff from './components/Staff';
 import Form from './components/Form';
+import './style.scss';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class App extends React.Component {
     this.typeChangeHandler = this.typeChangeHandler.bind(this);
     this.getScale = this.getScale.bind(this);
     this.getUpdate = this.getUpdate.bind(this);
+    this.start = this.start.bind(this);
     this.state = {
       signsType: 'all',
       signsCount: 5,
@@ -88,13 +90,19 @@ class App extends React.Component {
     });
   }
 
+  start(e) {
+    this.getScale();
+    e.target.classList.add('disabled');
+    e.target.disabled = true;
+  }
+
   render() {
     const { wheelVisible, selectedScale, selectedAcc } = this.state;
     let content;
     if (wheelVisible === true) {
       content = (
         <div className="inner-container">
-          <Form countChange={this.countChangeHandler} typeChange={this.typeChangeHandler} />
+          <Form countChange={this.countChangeHandler} typeChange={this.typeChangeHandler} start={this.start} />
           <Wheel getScale={this.getScale} scale={selectedScale} update={this.getUpdate} />
         </div>
       );
@@ -109,12 +117,12 @@ class App extends React.Component {
       );
     }
     return (
-      <div className="container">
+      <>
         <header className="header">
           <h1>Wylosuj gamę!!</h1>
         </header>
         {content}
-      </div>
+      </>
     );
   }
 }

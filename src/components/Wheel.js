@@ -32,33 +32,23 @@ class Wheel extends React.Component {
     }, 2000);
   }
 
-  start(e) {
-    this.props.getScale();
-    e.target.classList.add('disabled');
-    e.target.disabled = true;
-  }
-
   render() {
     const scaleArr = ['G-dur', 'F-dur', 'D-dur', 'B-dur', 'A-dur', 'Es-dur', 'E-dur', 'As-dur', 'H-dur', 'Des-dur', 'Fis-dur', 'Ges-dur', 'Cis-dur', 'Ces-dur', 'C-dur'];
     const wheelElements = scaleArr.map((scale, index) => (
-      <li key={index} className="number">
+      <li key={index} className="wheel__scale-field">
         <label htmlFor={`${scale}Input`}>
           <input type="radio" name="pit" value={scale} />
-          <span className="pit">{scale}</span>
+          <span className="wheel__scale-name">{scale}</span>
         </label>
       </li>
     ));
     return (
-      <div className="main">
-        <div className="plate" id="plate">
-          <ul className="inner">
-            {wheelElements}
-            <div className={this.state.style} onTransitionEnd={() => this.resetArrow()} />
-          </ul>
-          <div className="data">
-            <button type="button" className="btn" onClick={e => this.start(e)}>Losuj</button>
-          </div>
-        </div>
+      <div className="wheel__wrapper">
+        <ul className="wheel__content">
+          {wheelElements}
+          <div className={this.state.style} onTransitionEnd={() => this.resetArrow()} />
+        </ul>
+        <div className="wheel__center-overlay" />
       </div>
     );
   }
