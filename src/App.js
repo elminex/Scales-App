@@ -31,6 +31,7 @@ class App extends React.Component {
     };
     this.clickedArr = [];
     this.controlArr = [];
+    this.previousSelected = undefined;
   }
 
   setAccidentals(scale) {
@@ -116,6 +117,11 @@ class App extends React.Component {
   }
 
   countChangeHandler(e) {
+    if (this.previousSelected !== undefined) {
+      this.previousSelected.parentNode.classList.remove('selected');
+    }
+    e.target.parentNode.classList.add('selected');
+    this.previousSelected = e.target;
     const newValue = e.target.value;
     this.setState({
       signsCount: newValue,
@@ -148,13 +154,13 @@ class App extends React.Component {
 
   render() {
     const {
-      wheelVisible, selectedScale, text, success, modalVisible,
+      wheelVisible, selectedScale, text, success, modalVisible, signsType, signsCount,
     } = this.state;
     let content;
     if (wheelVisible === true) {
       content = (
         <div className="inner-container">
-          <Form countChange={this.countChangeHandler} typeChange={this.typeChangeHandler} />
+          <Form countChange={this.countChangeHandler} typeChange={this.typeChangeHandler} signsType={signsType} signsCount={signsCount} />
           <Wheel scale={selectedScale} update={this.getUpdate} start={this.start} />
         </div>
       );
