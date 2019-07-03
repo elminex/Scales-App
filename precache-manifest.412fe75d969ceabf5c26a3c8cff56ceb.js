@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "23e0bece185f5baf01d0fa0ad4bed310",
+    "revision": "c2091e0c6c3d3c1700ab2a1b4f4005e4",
     "url": "/gamy-react/index.html"
   },
   {
-    "revision": "42dfd29fad85defc715c",
-    "url": "/gamy-react/static/css/main.0dde3f92.chunk.css"
+    "revision": "e754aa5dc5ef4062d400",
+    "url": "/gamy-react/static/css/main.63e4e1fb.chunk.css"
   },
   {
     "revision": "6912c74cd1a2efda3580",
     "url": "/gamy-react/static/js/2.60abf8fa.chunk.js"
   },
   {
-    "revision": "42dfd29fad85defc715c",
-    "url": "/gamy-react/static/js/main.f57802a1.chunk.js"
+    "revision": "e754aa5dc5ef4062d400",
+    "url": "/gamy-react/static/js/main.44517823.chunk.js"
   },
   {
     "revision": "0576c6f6828134980d21",
