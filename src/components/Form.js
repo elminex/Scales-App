@@ -20,7 +20,6 @@ const Form = ({ countChange, typeChange, start }) => (
         Tylko gamy bemolowe.
         <input id="FlatsOnly" className="form__input" type="radio" name="znaki" value="flats" onChange={typeChange} />
       </label>
-      <button type="button" className="form__start-button" onClick={start}>Losuj</button>
     </form>
   </>
 );

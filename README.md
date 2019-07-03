@@ -11,7 +11,7 @@ The project was made to improve my skills in React.
 
 ### Using
 
-Working app is available [here](https://elminex.github.io/gamy-react)
+Working app is available [here](https://elminex.github.io/gamy-react).
 
 To run the app in the development mode use:
 

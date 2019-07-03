@@ -48,7 +48,9 @@ class Wheel extends React.Component {
           {wheelElements}
           <div className={this.state.style} onTransitionEnd={() => this.resetArrow()} />
         </ul>
-        <div className="wheel__center-overlay" />
+        <div className="wheel__center-overlay">
+          <button type="button" className="wheel__center-button" onClick={this.props.start}>Losuj</button>
+        </div>
       </div>
     );
   }

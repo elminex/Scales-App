@@ -1,9 +1,10 @@
 .signs {
     text-align: center;
     animation: fade-in .3s linear;
+    padding-bottom: 16px;
 
     &__title {
-        margin-bottom: 20px;
+        margin-bottom: 16px;
 
         &--lg {
             font-size: 2em;
@@ -30,7 +31,7 @@
         }
 
         &-info {
-            font-size: 1.4em;
+            font-size: 1em;
         }
     }
 
@@ -46,18 +47,12 @@
         font-family: 'Roboto', sans-serif;
         outline: none;
         transition: transform .2s;
-
-        &:hover {
-            border: 2px solid #ED6A5A;
-            border-top-color: #B55144;
-            border-left-color: #B55144;
-        }
+        border-radius: 3px;
 
         &:active {
             border: 2px solid #ED6A5A;
             border-top-color: #B55144;
             border-left-color: #B55144;
-            transform: scale(1.03);
         }
     }
 }

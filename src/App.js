@@ -3,6 +3,7 @@ import Wheel from './components/Wheel';
 import data from './data';
 import Staff from './components/Staff';
 import Form from './components/Form';
+import Modal from './components/Modal';
 import './style.scss';
 
 class App extends React.Component {
@@ -14,13 +15,22 @@ class App extends React.Component {
     this.getScale = this.getScale.bind(this);
     this.getUpdate = this.getUpdate.bind(this);
     this.start = this.start.bind(this);
+    this.compareArrays = this.compareArrays.bind(this);
+    this.accClickHandle = this.accClickHandle.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
+    this.checkSign = this.checkSign.bind(this);
     this.state = {
       signsType: 'all',
       signsCount: 5,
       selectedScale: undefined,
       selectedAcc: undefined,
       wheelVisible: true,
+      modalVisible: false,
+      text: '',
+      success: false,
     };
+    this.clickedArr = [];
+    this.controlArr = [];
   }
 
   setAccidentals(scale) {
@@ -43,6 +53,38 @@ class App extends React.Component {
 
   getUpdate(value) {
     this.setState({ wheelVisible: value });
+  }
+
+  accClickHandle(sign, target) {
+    target.classList.toggle('selected');
+    if (this.clickedArr.includes(sign)) {
+      this.clickedArr = this.clickedArr.filter(value => value !== sign);
+    } else {
+      this.clickedArr.push(sign);
+    }
+  }
+
+  compareArrays() {
+    this.controlArr = [];
+    const { selectedAcc } = this.state;
+    const userSelected = this.clickedArr;
+    if (selectedAcc.length === userSelected.length) {
+      selectedAcc.forEach(el1 => userSelected.forEach((el2) => {
+        if (el1 === el2) this.controlArr.push(el1);
+      }));
+      if (this.controlArr.length === selectedAcc.length) {
+        this.setState({ text: 'Bardzo dobrze, brawo!', success: true });
+      } else {
+        this.setState({ text: 'Zaznaczono złe znaki przy kluczu.' });
+      }
+    } else {
+      this.setState({ text: 'Ilość zaznaczonych znaków się nie zgadza.' });
+    }
+  }
+
+  checkSign() {
+    this.compareArrays();
+    this.toggleModal();
   }
 
   accNumber() {
@@ -87,7 +129,10 @@ class App extends React.Component {
       selectedScale: undefined,
       selectedAcc: undefined,
       wheelVisible: true,
+      success: false,
     });
+    this.clickedArr = [];
+    this.controlArr = [];
   }
 
   start(e) {
@@ -96,23 +141,32 @@ class App extends React.Component {
     e.target.disabled = true;
   }
 
+  toggleModal() {
+    const { modalVisible } = this.state;
+    this.setState({ modalVisible: !modalVisible });
+  }
+
   render() {
-    const { wheelVisible, selectedScale, selectedAcc } = this.state;
+    const {
+      wheelVisible, selectedScale, text, success, modalVisible,
+    } = this.state;
     let content;
     if (wheelVisible === true) {
       content = (
         <div className="inner-container">
-          <Form countChange={this.countChangeHandler} typeChange={this.typeChangeHandler} start={this.start} />
-          <Wheel getScale={this.getScale} scale={selectedScale} update={this.getUpdate} />
+          <Form countChange={this.countChangeHandler} typeChange={this.typeChangeHandler} />
+          <Wheel scale={selectedScale} update={this.getUpdate} start={this.start} />
         </div>
       );
     } else {
       content = (
         <Staff
-          signs={selectedAcc}
-          scale={selectedScale.name}
           flats={selectedScale.flats}
           reset={this.reset}
+          scale={selectedScale.name}
+          signClick={this.accClickHandle}
+          success={success}
+          checkSign={this.checkSign}
         />
       );
     }
@@ -121,6 +175,13 @@ class App extends React.Component {
         <header className="header">
           <h1>Wylosuj gamę!!</h1>
         </header>
+        <Modal
+          text={text}
+          toggleModal={this.toggleModal}
+          success={success}
+          reset={this.reset}
+          visible={modalVisible}
+        />
         {content}
       </>
     );
