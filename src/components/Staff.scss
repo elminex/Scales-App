@@ -1,3 +1,5 @@
+@import '../variables';
+
 .signs {
     text-align: center;
     animation: fade-in .3s linear;
@@ -5,10 +7,19 @@
 
     &__title {
         margin-bottom: 16px;
+        font-size: 2em;
+        color: $red;
+        position: relative;
 
-        &--lg {
-            font-size: 2em;
-            color: #ED6A5A;
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 2px;
+            width: 75%;
+            border-bottom: 2px solid $blue;
         }
     }
 
@@ -18,7 +29,6 @@
         height: 100%;
 
         &-wrapper {
-            border: 2px solid #5CA4A9;
             padding: 16px;
             margin-bottom: 16px;
         }
@@ -36,24 +46,18 @@
     }
 
     &__button {
-        background: #ED6A5A;
-        border: 2px solid #B55144;
-        border-top-color: #ED6A5A;
-        border-left-color: #ED6A5A;
+        background: $blue;
+        text-transform: uppercase;
+        width: 300px;
+        height: 50px;
         font-size: 16px;
         padding: 8px;
         cursor: pointer;
-        color: #fff;
+        color: $yellow;
         font-family: 'Roboto', sans-serif;
         outline: none;
         transition: transform .2s;
-        border-radius: 3px;
-
-        &:active {
-            border: 2px solid #ED6A5A;
-            border-top-color: #B55144;
-            border-left-color: #B55144;
-        }
+        border-radius: 16px;
     }
 }
 
@@ -62,11 +66,12 @@
         color: transparent;
         position: center;
         repeat: no-repeat;
-        size: 100%;
+        size: contain;
     }
+
     position: absolute;
     width: 8%;
-    height: 35%;
+    height: 40%;
     opacity: 0.2;
     padding: 0;
     border: none;
@@ -76,55 +81,55 @@
 
 @mixin sign-flat {
     background: {
-        image: url('./images/flat-no-bg.png');
+        image: url('./images/Flat.svg');
     }
 }
 
 @mixin sign-sharp {
     background: {
-        image: url('./images/sharp-no-bg.png');
+        image: url('./images/Sharp.svg');
     }
 }
 
 .signs__flat-1 {
     @include sign-flat;
     @include sign;
-    top: 29%;
+    top: 18%;
     left: 30%;
 }
 
 .signs__flat-2 {
     @include sign-flat;
     @include sign;
-    top: 9%;
+    top: -1%;
     left: 39%;
 }
 
 .signs__flat-3 {
     @include sign-flat;
     @include sign;
-    top: 35%;
+    top: 24%;
     left: 48%;
 }
 
 .signs__flat-4 {
     @include sign-flat;
     @include sign;
-    top: 16%;
+    top: 5%;
     left: 57%;
 }
 
 .signs__flat-5 {
     @include sign-flat;
     @include sign;
-    top: 42%;
+    top: 31%;
     left: 66%;
 }
 
 .signs__flat-6 {
     @include sign-flat;
     @include sign;
-    top: 22%;
+    top: 11%;
     left: 75%;
 }
 
@@ -138,49 +143,49 @@
 .signs__sharp-1 {
     @include sign-sharp;
     @include sign;
-    top: 8%;
+    top: 3%;
     left: 30%;
 }
 
 .signs__sharp-2 {
     @include sign-sharp;
     @include sign;
-    top: 29%;
+    top: 24%;
     left: 39%;
 }
 
 .signs__sharp-3 {
     @include sign-sharp;
     @include sign;
-    top: 3%;
+    top: -2%;
     left: 48%;
 }
 
 .signs__sharp-4 {
     @include sign-sharp;
     @include sign;
-    top: 22%;
+    top: 17%;
     left: 57%;
 }
 
 .signs__sharp-5 {
     @include sign-sharp;
     @include sign;
-    top: 43%;
+    top: 38%;
     left: 66%;
 }
 
 .signs__sharp-6 {
     @include sign-sharp;
     @include sign;
-    top: 16%;
+    top: 11%;
     left: 75%;
 }
 
 .signs__sharp-7 {
     @include sign-sharp;
     @include sign;
-    top: 35%;
+    top: 30%;
     left: 84%;
 }
 
@@ -207,6 +212,7 @@
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }

@@ -1,3 +1,5 @@
+@import '../variables';
+
 .modal {
     &__background {
         position: fixed;
@@ -14,7 +16,7 @@
 
     &__content {
         background-color: #fff;
-        padding: 50px 100px;
+        padding: 16px 32px;
         border-radius: 3px;
         text-align: center;
     }
@@ -24,26 +26,18 @@
     }
 
     &__button {
-        background: #ED6A5A;
-        border: 2px solid #B55144;
-        border-top-color: #ED6A5A;
-        border-left-color: #ED6A5A;
+        background: $blue;
+        text-transform: uppercase;
+        width: 300px;
+        height: 50px;
         font-size: 16px;
         padding: 8px;
         cursor: pointer;
-        color: #fff;
+        color: $yellow;
         font-family: 'Roboto', sans-serif;
         outline: none;
-        transition: all .2s;
-        margin-top: 1em;
-        border-radius: 3px;
-
-
-        &:active {
-            border: 2px solid #ED6A5A;
-            border-top-color: #B55144;
-            border-left-color: #B55144;
-        }
+        transition: transform .2s;
+        border-radius: 16px;
     }
 }
 

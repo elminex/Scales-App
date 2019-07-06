@@ -6,7 +6,7 @@ const data = {
       name: 'C-dur',
       flats: false,
       sharps: false,
-      rotation: 15,
+      rotation: 13,
     },
     {
       name: 'G-dur',
@@ -45,12 +45,6 @@ const data = {
       rotation: 11,
     },
     {
-      name: 'Cis-dur',
-      flats: false,
-      sharps: 7,
-      rotation: 13,
-    },
-    {
       name: 'F-dur',
       flats: 1,
       sharps: false,
@@ -85,12 +79,6 @@ const data = {
       flats: 6,
       sharps: false,
       rotation: 12,
-    },
-    {
-      name: 'Ces-dur',
-      flats: 7,
-      sharps: false,
-      rotation: 14,
     },
   ],
 };

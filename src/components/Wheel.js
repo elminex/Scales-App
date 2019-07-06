@@ -33,7 +33,7 @@ class Wheel extends React.Component {
   }
 
   render() {
-    const scaleArr = ['G-dur', 'F-dur', 'D-dur', 'B-dur', 'A-dur', 'Es-dur', 'E-dur', 'As-dur', 'H-dur', 'Des-dur', 'Fis-dur', 'Ges-dur', 'Cis-dur', 'Ces-dur', 'C-dur'];
+    const scaleArr = ['G-dur', 'F-dur', 'D-dur', 'B-dur', 'A-dur', 'Es-dur', 'E-dur', 'As-dur', 'H-dur', 'Des-dur', 'Fis-dur', 'Ges-dur', 'C-dur'];
     const wheelElements = scaleArr.map((scale, index) => (
       <li key={index} className="wheel__scale-field">
         <label htmlFor={`${scale}Input`}>
@@ -49,7 +49,7 @@ class Wheel extends React.Component {
           <div className={this.state.style} onTransitionEnd={() => this.resetArrow()} />
         </ul>
         <div className="wheel__center-overlay">
-          <button type="button" className="wheel__center-button" onClick={this.props.start}>Losuj</button>
+          <button type="button" className="wheel__center-button" onClick={this.props.start}>losuj gamę</button>
         </div>
       </div>
     );

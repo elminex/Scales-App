@@ -1,64 +1,73 @@
+@import '../variables';
+
 .form {
     display: flex;
     flex-direction: column;
+    width: 100%;
+
     &__type-wrapper {
         display: flex;
-        justify-content: center;
-        margin-bottom: 8px;
+        justify-content: flex-end;
+        margin-bottom: 32px;
     }
-    &__number-wrapper {
-        display: flex;
-        justify-content: center;
-    }
-}
 
-
-/* .form__input-label {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-bottom: 0.5em;
-
-    &--acc {
-        font-size: 1.2em;
-        font-weight: bold;
-    }
-}
-*/
-.form__input-label-acc {
-    width: 32px;
-    height: 32px;
-    margin-right: 8px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    &.sharp {
-        background-image: url('./images/sharp-no-bg.png');
-
+    &__number {
+        &-text {
+            font-size: 1.5rem;
+            flex: 2;
+            text-align: center;
         }
-    &.flat {
-        background-image: url('./images/flat-no-bg.png');
-    }
-    &.selected {
-        background-color: red;
-    }
-}
-.form__input-label-number {
-    width: 32px;
-    height: 32px;
-    text-align: center;
-    margin-right: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid red;
-    &.selected {
-        background-color: blue;
-    }
-}
+        &-wrapper {
+            display: flex;
+        }
+        &-container {
+            flex: 4;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
 
-.form__input {
-    opacity: 0;
-    width: 1px;
+        &-label {
+            flex: 0 0 60px;
+            width: 60px;
+            height: 40px;
+            margin-right: 12px;
+            margin-bottom: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $green;
+            border-radius: 16px;
+            font-size: 1.5rem;
 
+            &.selected {
+                background-color: blue;
+            }
+        }
+
+    }
+
+    &__input {
+        opacity: 0;
+        width: 1px;
+
+        &-acc {
+            fill: $yellow;
+            height: calc(100% - 8px);
+            padding: 4px;
+        }
+
+        &-label-acc {
+            width: 72px;
+            height: 48px;
+            margin-right: 16px;
+            border-radius: 16px;
+            background-color: $blue;
+            text-align: center;
+        }
+
+        &.selected {
+            background-color: $blue;
+        }
+    }
 }

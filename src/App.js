@@ -20,7 +20,6 @@ class App extends React.Component {
     this.toggleModal = this.toggleModal.bind(this);
     this.checkSign = this.checkSign.bind(this);
     this.state = {
-      signsType: 'all',
       signsCount: 5,
       selectedScale: undefined,
       selectedAcc: undefined,
@@ -28,6 +27,8 @@ class App extends React.Component {
       modalVisible: false,
       text: '',
       success: false,
+      flatsSelected: true,
+      sharpsSelected: true,
     };
     this.clickedArr = [];
     this.controlArr = [];
@@ -47,7 +48,7 @@ class App extends React.Component {
   getScale() {
     const filteredScales = this.accNumber();
     const random = Math.floor((Math.random() * filteredScales.length));
-    const selectedScale = filteredScales[random];
+    const selectedScale = filteredScales[random] || filteredScales;
     const accidentals = this.setAccidentals(selectedScale);
     this.setState({ selectedScale, selectedAcc: accidentals });
   }
@@ -89,30 +90,29 @@ class App extends React.Component {
   }
 
   accNumber() {
-    const { signsType, signsCount } = this.state;
+    const { signsCount, flatsSelected, sharpsSelected } = this.state;
     let filteredScales;
-    switch (signsType) {
-      case 'flats':
-        filteredScales = data.scales.filter(element => (
-          element.flats !== false && element.flats <= signsCount));
-        break;
-      case 'sharps':
-        filteredScales = data.scales.filter(element => (
-          element.sharps !== false && element.sharps <= signsCount));
-        break;
-      default:
-        filteredScales = data.scales.filter(element => (
-          element.sharps || element.flats) <= signsCount);
+    if (sharpsSelected && !flatsSelected) {
+      filteredScales = data.scales.filter(element => (
+        element.sharps !== false && element.sharps <= signsCount));
+    } else if (!sharpsSelected && flatsSelected) {
+      filteredScales = data.scales.filter(element => (
+        element.flats !== false && element.flats <= signsCount));
+    } else if (sharpsSelected && flatsSelected) {
+      filteredScales = data.scales.filter(element => (
+        element.sharps || element.flats) <= signsCount);
+    } else {
+      filteredScales = data.scales[0];
     }
     return filteredScales;
   }
 
   typeChangeHandler(e) {
-    if (e.target.checked === true) {
-      const newValue = e.target.value;
-      this.setState({
-        signsType: newValue,
-      });
+    const checkboxValue = e.target.checked;
+    if (e.target.value === 'sharps') {
+      this.setState({ sharpsSelected: checkboxValue });
+    } else {
+      this.setState({ flatsSelected: checkboxValue });
     }
   }
 
@@ -130,7 +130,8 @@ class App extends React.Component {
 
   reset() {
     this.setState({
-      signsType: 'all',
+      sharpsSelected: true,
+      flatsSelected: true,
       signsCount: 5,
       selectedScale: undefined,
       selectedAcc: undefined,
@@ -154,13 +155,19 @@ class App extends React.Component {
 
   render() {
     const {
-      wheelVisible, selectedScale, text, success, modalVisible, signsType, signsCount,
+      wheelVisible, selectedScale, text, success, modalVisible, signsCount, sharpsSelected, flatsSelected,
     } = this.state;
     let content;
     if (wheelVisible === true) {
       content = (
         <div className="inner-container">
-          <Form countChange={this.countChangeHandler} typeChange={this.typeChangeHandler} signsType={signsType} signsCount={signsCount} />
+          <Form
+            countChange={this.countChangeHandler}
+            typeChange={this.typeChangeHandler}
+            signsCount={signsCount}
+            sharpsSelected={sharpsSelected}
+            flatsSelected={flatsSelected}
+          />
           <Wheel scale={selectedScale} update={this.getUpdate} start={this.start} />
         </div>
       );
@@ -179,7 +186,7 @@ class App extends React.Component {
     return (
       <>
         <header className="header">
-          <h1>Wylosuj gamę!!</h1>
+          <h1 className="header__title">zaGRAJ <span className="header__title--rotation">w</span><br /> <span className="header__title--size">GAMY</span></h1>
         </header>
         <Modal
           text={text}
