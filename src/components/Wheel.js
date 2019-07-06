@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../style.scss';
 import './Arrow.scss';
 import './Wheel.scss';
@@ -55,5 +56,16 @@ class Wheel extends React.Component {
     );
   }
 }
+
+Wheel.propTypes = {
+  scale: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    flats: PropTypes.number.isRequired,
+    sharps: PropTypes.bool.isRequired,
+    rotation: PropTypes.number.isRequired,
+  }),
+  update: PropTypes.func.isRequired,
+  start: PropTypes.func.isRequired,
+};
 
 export default Wheel;

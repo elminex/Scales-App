@@ -3,11 +3,10 @@
 .signs {
     text-align: center;
     animation: fade-in .3s linear;
-    padding-bottom: 16px;
 
     &__title {
-        margin-bottom: 16px;
-        font-size: 2em;
+        margin: 16px;
+        font-size: 2.5em;
         color: $red;
         position: relative;
 
@@ -30,18 +29,17 @@
 
         &-wrapper {
             padding: 16px;
-            margin-bottom: 16px;
         }
 
         &-overlay {
             position: relative;
             max-width: 600px;
             margin: 0 auto;
-            margin-bottom: 16px;
         }
 
         &-info {
             font-size: 1em;
+            margin: 0 0 16px;
         }
     }
 
@@ -81,55 +79,55 @@
 
 @mixin sign-flat {
     background: {
-        image: url('./images/Flat.svg');
+        image: url('../images/Flat.svg');
     }
 }
 
 @mixin sign-sharp {
     background: {
-        image: url('./images/Sharp.svg');
+        image: url('../images/Sharp.svg');
     }
 }
 
 .signs__flat-1 {
     @include sign-flat;
     @include sign;
-    top: 18%;
+    top: 22%;
     left: 30%;
 }
 
 .signs__flat-2 {
     @include sign-flat;
     @include sign;
-    top: -1%;
+    top: 3%;
     left: 39%;
 }
 
 .signs__flat-3 {
     @include sign-flat;
     @include sign;
-    top: 24%;
+    top: 28%;
     left: 48%;
 }
 
 .signs__flat-4 {
     @include sign-flat;
     @include sign;
-    top: 5%;
+    top: 9%;
     left: 57%;
 }
 
 .signs__flat-5 {
     @include sign-flat;
     @include sign;
-    top: 31%;
+    top: 35%;
     left: 66%;
 }
 
 .signs__flat-6 {
     @include sign-flat;
     @include sign;
-    top: 11%;
+    top: 15%;
     left: 75%;
 }
 
@@ -191,7 +189,7 @@
 
 .selected {
     opacity: 1;
-    animation: animate-size .2s;
+    animation: animate-size .3s;
 }
 
 @keyframes animate-size {

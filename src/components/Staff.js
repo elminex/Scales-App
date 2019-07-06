@@ -1,9 +1,10 @@
 import React from 'react';
-import staff from './images/staff-small.svg';
+import PropTypes from 'prop-types';
+import staff from '../images/staff-small.svg';
 import './Staff.scss';
 
 const Staff = ({
-  flats, reset, scale, signClick, success, checkSign,
+  flats, scale, signClick, success, checkSign,
 }) => {
   if (flats === false) {
     return (
@@ -43,6 +44,19 @@ const Staff = ({
       </div>
     </div>
   );
+};
+
+Staff.propTypes = {
+  flats: PropTypes.bool.isRequired,
+  scale: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    flats: PropTypes.number.isRequired,
+    sharps: PropTypes.bool.isRequired,
+    rotation: PropTypes.number.isRequired,
+  }).isRequired,
+  signClick: PropTypes.func.isRequired,
+  success: PropTypes.bool.isRequired,
+  checkSign: PropTypes.func.isRequired,
 };
 
 export default Staff;

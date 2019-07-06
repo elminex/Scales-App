@@ -1,5 +1,6 @@
 import React from 'react';
 import './Modal.scss';
+import PropTypes from 'prop-types';
 
 const Modal = ({
   text, toggleModal, success, reset, visible,
@@ -22,6 +23,14 @@ const Modal = ({
       </div>
     </div>
   );
+};
+
+Modal.propTypes = {
+  text: PropTypes.string.isRequired,
+  toggleModal: PropTypes.func.isRequired,
+  success: PropTypes.bool.isRequired,
+  reset: PropTypes.func.isRequired,
+  visible: PropTypes.bool.isRequired,
 };
 
 export default Modal;

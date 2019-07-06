@@ -155,7 +155,14 @@ class App extends React.Component {
 
   render() {
     const {
-      wheelVisible, selectedScale, text, success, modalVisible, signsCount, sharpsSelected, flatsSelected,
+      wheelVisible,
+      selectedScale,
+      text,
+      success,
+      modalVisible,
+      signsCount,
+      sharpsSelected,
+      flatsSelected,
     } = this.state;
     let content;
     if (wheelVisible === true) {
@@ -186,16 +193,20 @@ class App extends React.Component {
     return (
       <>
         <header className="header">
-          <h1 className="header__title">zaGRAJ <span className="header__title--rotation">w</span><br /> <span className="header__title--size">GAMY</span></h1>
+          <div className="container">
+            <h1 className="header__title">zaGRAJ <span className="header__title--rotation">w</span><br /> <span className="header__title--size">GAMY</span></h1>
+          </div>
         </header>
-        <Modal
-          text={text}
-          toggleModal={this.toggleModal}
-          success={success}
-          reset={this.reset}
-          visible={modalVisible}
-        />
-        {content}
+        <div className="container">
+          <Modal
+            text={text}
+            toggleModal={this.toggleModal}
+            success={success}
+            reset={this.reset}
+            visible={modalVisible}
+          />
+          {content}
+        </div>
       </>
     );
   }
