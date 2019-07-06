@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/gamy-react/static/css/main.63e4e1fb.chunk.css",
-    "main.js": "/gamy-react/static/js/main.44517823.chunk.js",
-    "main.js.map": "/gamy-react/static/js/main.44517823.chunk.js.map",
+    "main.css": "/gamy-react/static/css/main.cdf08cb0.chunk.css",
+    "main.js": "/gamy-react/static/js/main.8befb7ec.chunk.js",
+    "main.js.map": "/gamy-react/static/js/main.8befb7ec.chunk.js.map",
     "runtime~main.js": "/gamy-react/static/js/runtime~main.3d482a01.js",
     "runtime~main.js.map": "/gamy-react/static/js/runtime~main.3d482a01.js.map",
     "static/js/2.60abf8fa.chunk.js": "/gamy-react/static/js/2.60abf8fa.chunk.js",
     "static/js/2.60abf8fa.chunk.js.map": "/gamy-react/static/js/2.60abf8fa.chunk.js.map",
     "index.html": "/gamy-react/index.html",
-    "precache-manifest.412fe75d969ceabf5c26a3c8cff56ceb.js": "/gamy-react/precache-manifest.412fe75d969ceabf5c26a3c8cff56ceb.js",
+    "precache-manifest.d4fd10ec7b5565984757f0d24e60f146.js": "/gamy-react/precache-manifest.d4fd10ec7b5565984757f0d24e60f146.js",
     "service-worker.js": "/gamy-react/service-worker.js",
-    "static/css/main.63e4e1fb.chunk.css.map": "/gamy-react/static/css/main.63e4e1fb.chunk.css.map",
-    "static/media/kluczS.png": "/gamy-react/static/media/kluczS.f83b41a2.png",
+    "static/css/main.cdf08cb0.chunk.css.map": "/gamy-react/static/css/main.cdf08cb0.chunk.css.map",
+    "static/media/Staff.scss": "/gamy-react/static/media/Sharp.9215352c.svg",
+    "static/media/staff-small.svg": "/gamy-react/static/media/staff-small.456b40c8.svg",
     "static/media/Arrow.scss": "/gamy-react/static/media/trumpetR+W.af6fae3a.png"
   }
 }
