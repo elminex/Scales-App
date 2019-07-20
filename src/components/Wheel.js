@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../style.scss';
-import './Arrow.scss';
 import './Wheel.scss';
 
 class Wheel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      style: 'arrow',
+      style: 'wheel__content',
     };
   }
 
@@ -16,20 +14,15 @@ class Wheel extends React.Component {
     if (prevProps.scale !== this.props.scale) {
       if (prevProps !== undefined) {
         const rotationValue = this.props.scale.rotation;
-        const newState = `arrow rotation-${rotationValue}`;
+        const newState = `wheel__content rotation-${rotationValue}`;
         this.setState({ style: newState });
       }
     }
   }
 
-  setArrow() {
-    this.setState({ style: 'arrow' });
-  }
-
   resetArrow() {
     setTimeout(() => {
       this.props.update(false);
-      this.setArrow();
     }, 2000);
   }
 
@@ -38,16 +31,16 @@ class Wheel extends React.Component {
     const wheelElements = scaleArr.map((scale, index) => (
       <li key={index} className="wheel__scale-field">
         <label htmlFor={`${scale}Input`}>
-          <input type="radio" name="pit" value={scale} />
+          <input id={`${scale}Input`} type="radio" name="pit" value={scale} />
           <span className="wheel__scale-name">{scale}</span>
         </label>
       </li>
     ));
     return (
       <div className="wheel__wrapper">
-        <ul className="wheel__content">
+        <div className="wheel__pointer" />
+        <ul className={this.state.style} onTransitionEnd={() => this.resetArrow()}>
           {wheelElements}
-          <div className={this.state.style} onTransitionEnd={() => this.resetArrow()} />
         </ul>
         <div className="wheel__center-overlay">
           <button type="button" className="wheel__center-button" onClick={this.props.start}>losuj gamę</button>
@@ -60,8 +53,14 @@ class Wheel extends React.Component {
 Wheel.propTypes = {
   scale: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    flats: PropTypes.number.isRequired,
-    sharps: PropTypes.bool.isRequired,
+    flats: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.number,
+    ]).isRequired,
+    sharps: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.number,
+    ]).isRequired,
     rotation: PropTypes.number.isRequired,
   }),
   update: PropTypes.func.isRequired,

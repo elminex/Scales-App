@@ -5,21 +5,17 @@ import PropTypes from 'prop-types';
 const Modal = ({
   text, toggleModal, success, reset, visible,
 }) => {
+  let button;
   if (success) {
-    return (
-      <div className={`modal__background ${visible ? 'modal--visible' : 'modal--hidden'}`}>
-        <div className="modal__content">
-          <p className="modal__text">{text}</p>
-          <button type="button" className="modal__button" onClick={() => { reset(); toggleModal(); }}>Nowe losowanie</button>
-        </div>
-      </div>
-    );
+    button = (<button type="button" className="modal__button" onClick={() => { reset(); toggleModal(); }}>Nowe losowanie</button>);
+  } else {
+    button = (<button type="button" className="modal__button" onClick={toggleModal}>Spróbuj ponownie</button>);
   }
   return (
     <div className={`modal__background ${visible ? 'modal--visible' : 'modal--hidden'}`}>
       <div className="modal__content">
         <p className="modal__text">{text}</p>
-        <button type="button" className="modal__button" onClick={toggleModal}>Spróbuj ponownie</button>
+        {button}
       </div>
     </div>
   );

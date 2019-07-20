@@ -122,7 +122,7 @@ class App extends React.Component {
     }
     e.target.parentNode.classList.add('selected');
     this.previousSelected = e.target;
-    const newValue = e.target.value;
+    const newValue = parseInt(e.target.value, 10);
     this.setState({
       signsCount: newValue,
     });
