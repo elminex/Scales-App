@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ac8e6a7c10d884718901202aea801c8a",
+    "revision": "635de5a5486c8b3221ba35dd09063376",
     "url": "/gamy-react/index.html"
   },
   {
-    "revision": "28493b0a12a1dc21a02b",
-    "url": "/gamy-react/static/css/main.cdf08cb0.chunk.css"
+    "revision": "b7c82b41f68663d02b72",
+    "url": "/gamy-react/static/css/main.c573bfa8.chunk.css"
   },
   {
-    "revision": "6912c74cd1a2efda3580",
-    "url": "/gamy-react/static/js/2.60abf8fa.chunk.js"
+    "revision": "e1df9e5dd97f9dc5b41a",
+    "url": "/gamy-react/static/js/2.373ccd69.chunk.js"
   },
   {
-    "revision": "28493b0a12a1dc21a02b",
-    "url": "/gamy-react/static/js/main.8befb7ec.chunk.js"
+    "revision": "b7c82b41f68663d02b72",
+    "url": "/gamy-react/static/js/main.82c392ce.chunk.js"
   },
   {
     "revision": "0576c6f6828134980d21",
@@ -30,9 +30,5 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "456b40c8ca8bcbbf32e4a01b91219c66",
     "url": "/gamy-react/static/media/staff-small.456b40c8.svg"
-  },
-  {
-    "revision": "af6fae3a5820c56936cff941f4941869",
-    "url": "/gamy-react/static/media/trumpetR+W.af6fae3a.png"
   }
 ]);

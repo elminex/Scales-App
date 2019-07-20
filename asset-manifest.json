@@ -1,18 +1,17 @@
 {
   "files": {
-    "main.css": "/gamy-react/static/css/main.cdf08cb0.chunk.css",
-    "main.js": "/gamy-react/static/js/main.8befb7ec.chunk.js",
-    "main.js.map": "/gamy-react/static/js/main.8befb7ec.chunk.js.map",
+    "main.css": "/gamy-react/static/css/main.c573bfa8.chunk.css",
+    "main.js": "/gamy-react/static/js/main.82c392ce.chunk.js",
+    "main.js.map": "/gamy-react/static/js/main.82c392ce.chunk.js.map",
     "runtime~main.js": "/gamy-react/static/js/runtime~main.3d482a01.js",
     "runtime~main.js.map": "/gamy-react/static/js/runtime~main.3d482a01.js.map",
-    "static/js/2.60abf8fa.chunk.js": "/gamy-react/static/js/2.60abf8fa.chunk.js",
-    "static/js/2.60abf8fa.chunk.js.map": "/gamy-react/static/js/2.60abf8fa.chunk.js.map",
+    "static/js/2.373ccd69.chunk.js": "/gamy-react/static/js/2.373ccd69.chunk.js",
+    "static/js/2.373ccd69.chunk.js.map": "/gamy-react/static/js/2.373ccd69.chunk.js.map",
     "index.html": "/gamy-react/index.html",
-    "precache-manifest.d4fd10ec7b5565984757f0d24e60f146.js": "/gamy-react/precache-manifest.d4fd10ec7b5565984757f0d24e60f146.js",
+    "precache-manifest.82f1266aae673529cb79d4c53f467de4.js": "/gamy-react/precache-manifest.82f1266aae673529cb79d4c53f467de4.js",
     "service-worker.js": "/gamy-react/service-worker.js",
-    "static/css/main.cdf08cb0.chunk.css.map": "/gamy-react/static/css/main.cdf08cb0.chunk.css.map",
+    "static/css/main.c573bfa8.chunk.css.map": "/gamy-react/static/css/main.c573bfa8.chunk.css.map",
     "static/media/Staff.scss": "/gamy-react/static/media/Sharp.9215352c.svg",
-    "static/media/staff-small.svg": "/gamy-react/static/media/staff-small.456b40c8.svg",
-    "static/media/Arrow.scss": "/gamy-react/static/media/trumpetR+W.af6fae3a.png"
+    "static/media/staff-small.svg": "/gamy-react/static/media/staff-small.456b40c8.svg"
   }
 }
