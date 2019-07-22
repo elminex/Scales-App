@@ -1,217 +1,217 @@
 @import '../variables';
 
 .signs {
-    text-align: center;
-    animation: fade-in .3s linear;
+  text-align: center;
+  animation: fade-in .3s linear;
 
-    &__title {
-        margin: 16px;
-        font-size: 2.5em;
-        color: $red;
-        position: relative;
+  &__title {
+    margin: 16px;
+    font-size: 2.5em;
+    color: $red;
+    position: relative;
 
-        &:after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            height: 2px;
-            width: 75%;
-            border-bottom: 2px solid $blue;
-        }
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 2px;
+      width: 75%;
+      border-bottom: 2px solid $blue;
+    }
+  }
+
+  &__key {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    &-wrapper {
+      padding: 16px;
     }
 
-    &__key {
-        display: block;
-        width: 100%;
-        height: 100%;
-
-        &-wrapper {
-            padding: 16px;
-        }
-
-        &-overlay {
-            position: relative;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        &-info {
-            font-size: 1em;
-            margin: 0 0 16px;
-        }
+    &-overlay {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
-    &__button {
-        background: $blue;
-        text-transform: uppercase;
-        width: 300px;
-        height: 50px;
-        font-size: 16px;
-        padding: 8px;
-        cursor: pointer;
-        color: $yellow;
-        font-family: 'Roboto', sans-serif;
-        outline: none;
-        transition: transform .2s;
-        border-radius: 16px;
+    &-info {
+      font-size: 1em;
+      margin: 0 0 16px;
     }
+  }
+
+  &__button {
+    background: $blue;
+    text-transform: uppercase;
+    width: 300px;
+    height: 50px;
+    font-size: 16px;
+    padding: 8px;
+    cursor: pointer;
+    color: $yellow;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    transition: transform .2s;
+    border-radius: 16px;
+  }
 }
 
 @mixin sign {
-    background: {
-        color: transparent;
-        position: center;
-        repeat: no-repeat;
-        size: contain;
-    }
+  background: {
+    color: transparent;
+    position: center;
+    repeat: no-repeat;
+    size: contain;
+  }
 
-    position: absolute;
-    width: 8%;
-    height: 40%;
-    opacity: 0.2;
-    padding: 0;
-    border: none;
-    outline: none;
-    transition: opacity .2s ease-in-out;
+  position: absolute;
+  width: 8%;
+  height: 40%;
+  opacity: 0.2;
+  padding: 0;
+  border: none;
+  outline: none;
+  transition: opacity .2s ease-in-out;
 }
 
 @mixin sign-flat {
-    background: {
-        image: url('../images/Flat.svg');
-    }
+  background: {
+    image: url('../images/Flat.svg');
+  }
 }
 
 @mixin sign-sharp {
-    background: {
-        image: url('../images/Sharp.svg');
-    }
+  background: {
+    image: url('../images/Sharp.svg');
+  }
 }
 
 .signs__flat-1 {
-    @include sign-flat;
-    @include sign;
-    top: 22%;
-    left: 30%;
+  @include sign-flat;
+  @include sign;
+  top: 22%;
+  left: 30%;
 }
 
 .signs__flat-2 {
-    @include sign-flat;
-    @include sign;
-    top: 3%;
-    left: 39%;
+  @include sign-flat;
+  @include sign;
+  top: 3%;
+  left: 39%;
 }
 
 .signs__flat-3 {
-    @include sign-flat;
-    @include sign;
-    top: 28%;
-    left: 48%;
+  @include sign-flat;
+  @include sign;
+  top: 28%;
+  left: 48%;
 }
 
 .signs__flat-4 {
-    @include sign-flat;
-    @include sign;
-    top: 9%;
-    left: 57%;
+  @include sign-flat;
+  @include sign;
+  top: 9%;
+  left: 57%;
 }
 
 .signs__flat-5 {
-    @include sign-flat;
-    @include sign;
-    top: 35%;
-    left: 66%;
+  @include sign-flat;
+  @include sign;
+  top: 35%;
+  left: 66%;
 }
 
 .signs__flat-6 {
-    @include sign-flat;
-    @include sign;
-    top: 15%;
-    left: 75%;
+  @include sign-flat;
+  @include sign;
+  top: 15%;
+  left: 75%;
 }
 
 .signs__flat-7 {
-    @include sign-flat;
-    @include sign;
-    top: 48%;
-    left: 84%;
+  @include sign-flat;
+  @include sign;
+  top: 48%;
+  left: 84%;
 }
 
 .signs__sharp-1 {
-    @include sign-sharp;
-    @include sign;
-    top: 3%;
-    left: 30%;
+  @include sign-sharp;
+  @include sign;
+  top: 3%;
+  left: 30%;
 }
 
 .signs__sharp-2 {
-    @include sign-sharp;
-    @include sign;
-    top: 24%;
-    left: 39%;
+  @include sign-sharp;
+  @include sign;
+  top: 24%;
+  left: 39%;
 }
 
 .signs__sharp-3 {
-    @include sign-sharp;
-    @include sign;
-    top: -2%;
-    left: 48%;
+  @include sign-sharp;
+  @include sign;
+  top: -2%;
+  left: 48%;
 }
 
 .signs__sharp-4 {
-    @include sign-sharp;
-    @include sign;
-    top: 17%;
-    left: 57%;
+  @include sign-sharp;
+  @include sign;
+  top: 17%;
+  left: 57%;
 }
 
 .signs__sharp-5 {
-    @include sign-sharp;
-    @include sign;
-    top: 38%;
-    left: 66%;
+  @include sign-sharp;
+  @include sign;
+  top: 38%;
+  left: 66%;
 }
 
 .signs__sharp-6 {
-    @include sign-sharp;
-    @include sign;
-    top: 11%;
-    left: 75%;
+  @include sign-sharp;
+  @include sign;
+  top: 11%;
+  left: 75%;
 }
 
 .signs__sharp-7 {
-    @include sign-sharp;
-    @include sign;
-    top: 30%;
-    left: 84%;
+  @include sign-sharp;
+  @include sign;
+  top: 30%;
+  left: 84%;
 }
 
 .selected {
-    opacity: 1;
-    animation: animate-size .3s;
+  opacity: 1;
+  animation: animate-size .3s;
 }
 
 @keyframes animate-size {
-    0% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
+  }
 
-    50% {
-        transform: scale(1.2);
-    }
+  50% {
+    transform: scale(1.2);
+  }
 
-    100% {
-        transform: scale(1);
-    }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }

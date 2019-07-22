@@ -10,17 +10,17 @@ const Form = ({
 }) => (
   <form className="form">
     <div className="form__type-wrapper">
-      <label className={`${sharpsSelected ? 'form__input-label-acc sharp selected' : 'form__input-label-acc sharp'}`} htmlFor="SharpsOnly">
-        <Sharp />
+      <label className={sharpsSelected ? 'form__input-label-acc selected' : 'form__input-label-acc sharp'} htmlFor="SharpsOnly">
+        <Sharp sharpsSelected={sharpsSelected} />
         <input id="SharpsOnly" className="form__input" type="checkbox" name="znaki" value="sharps" checked={sharpsSelected} onChange={typeChange} />
       </label>
-      <label className={`${flatsSelected ? 'form__input-label-acc flat selected' : 'form__input-label-acc flat'}`} htmlFor="FlatsOnly">
-        <Flat />
+      <label className={flatsSelected ? 'form__input-label-acc selected' : 'form__input-label-acc flat'} htmlFor="FlatsOnly">
+        <Flat flatsSelected={flatsSelected} />
         <input id="FlatsOnly" className="form__input" type="checkbox" name="znaki" value="flats" checked={flatsSelected} onChange={typeChange} />
       </label>
     </div>
     <div className="form__number-wrapper">
-      <span className="form__number-text">Ilość znaków</span>
+      <span className="form__number-text">Do ilu znaków?</span>
       <FormNumbers countChange={countChange} signsCount={signsCount} />
     </div>
   </form>

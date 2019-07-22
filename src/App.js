@@ -4,6 +4,7 @@ import data from './data';
 import Staff from './components/Staff';
 import Form from './components/Form';
 import Modal from './components/Modal';
+import Header from './components/Header';
 import './style.scss';
 
 class App extends React.Component {
@@ -192,11 +193,7 @@ class App extends React.Component {
     }
     return (
       <>
-        <header className="header">
-          <div className="container">
-            <h1 className="header__title">zaGRAJ <span className="header__title--rotation">w</span><br /> <span className="header__title--size">GAMY</span></h1>
-          </div>
-        </header>
+        <Header />
         <div className="container">
           <Modal
             text={text}

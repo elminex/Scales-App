@@ -2,68 +2,45 @@
 @import 'variables';
 
 .container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: $background;
-}
-
-.header {
-    color: $blue;
-    width: 100%;
-    position: relative;
-    background-color: $background;
-    display: flex;
-    justify-content: flex-end;
-    &__title {
-        padding: 16px;
-        margin: 0;
-        text-align: right;
-        &--rotation {
-            transform: rotate(-90deg);
-            display: inline-block;
-        }
-        &--size {
-            font-size: 3rem;
-        }
-    }
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: $background;
 }
 
 .inner-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 16px 16px 0;
-    animation: fade-in .3s linear;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 16px 16px 0;
+  animation: fade-in .3s linear;
 }
 
 .disabled {
-    cursor: not-allowed;
-    opacity: 0.6;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 @keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }
+
 @media screen and (min-width: 768px) {
-    .inner-container {
-        flex-direction: row;
-    }
-
-    .header__title {
-        text-align: center;
-    }
+  .inner-container {
+    flex-direction: row;
+  }
 }
+
 @media screen and (orientation: landscape) {
-        .inner-container {
-            flex-direction: row;
-            align-items: flex-start;
-        }
+  .inner-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 }
