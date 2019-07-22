@@ -1,6 +1,10 @@
 @import 'normalize.css';
 @import 'variables';
 
+* {
+  box-sizing: border-box;
+}
+
 .container {
   width: 100%;
   max-width: 800px;
@@ -13,13 +17,27 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  padding: 16px 16px 0;
+  padding: 0 16px;
   animation: fade-in .3s linear;
 }
 
 .disabled {
   cursor: not-allowed;
-  opacity: 0.6;
+  opacity: 0.8;
+}
+
+@keyframes animate-size {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes fade-in {
@@ -32,13 +50,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
-  .inner-container {
-    flex-direction: row;
-  }
-}
-
-@media screen and (orientation: landscape) {
+@media screen and (min-width: 768px), screen and (orientation: landscape) {
   .inner-container {
     flex-direction: row;
     align-items: flex-start;

@@ -6,7 +6,7 @@
   $full: 3;
   $rotation: (360 * $full) + $deg;
   transform: rotateZ($rotation);
-  transition: transform 6s ease-in-out;
+  transition: transform 6s cubic-bezier(.47,.02,.32,1.07);
   //    transform-origin: 50% 100%;
 
 }
@@ -69,18 +69,18 @@
   &__pointer {
     width: 0;
     height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 20px solid $red;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 28px solid $red;
     position: absolute;
-    top: 0;
+    top: -8px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 3;
+    z-index: 5;
   }
 
   &__wrapper {
-    background-color: #9BC1BC;
+    background-color: $wheel-bg-color;
     width: $wheel-size-xs;
     height: $wheel-size-xs;
     border-radius: 50%;
@@ -88,8 +88,8 @@
   }
 
   &__scale-name {
-    color: #fff;
-    padding-top: 12px;
+    color: $wheel-text;
+    padding-top: 15px;
     width: 60px;
     display: inline-block;
     font-size: 12px;
@@ -109,14 +109,16 @@
 
     &:after {
       content: '';
-      height: calc(#{$wheel-size-xs} + 10px);
-      width: calc(#{$wheel-size-xs} + 10px);
+      height: calc(#{$wheel-size-xs} + 16px);
+      width: calc(#{$wheel-size-xs} + 16px);
       position: absolute;
-      top: -5px;
-      left: -5px;
+      top: -8px;
+      left: -8px;
       box-sizing: border-box;
-      border: 10px solid white;
+      border: 8px solid rgb(65, 65, 65);
       border-radius: 50%;
+      box-shadow: inset 0px 0px 9px 0px black;
+      z-index: 4;
     }
   }
 
@@ -137,16 +139,18 @@
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background: $blue;
+      background: radial-gradient($red 60px, #661c1c);
+      background-repeat: no-repeat;
       border: none;
       font-size: 16px;
       text-transform: uppercase;
       cursor: pointer;
-      color: $yellow;
+      color: white;
       font-family: 'Roboto', sans-serif;
       outline: none;
       transition: all .2s;
       padding: 0;
+      box-shadow: 0 0 9px 0px black;
     }
   }
 
@@ -162,7 +166,7 @@
     background-color: transparent;
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
-    border-top: calc(#{$wheel-size-xs} / 2) solid $green-dark;
+    border-top: calc(#{$wheel-size-xs} / 2) solid $scale-field-color;
     box-sizing: border-box;
 
     &:nth-child(1) {
@@ -245,8 +249,8 @@
       width: $wheel-size-sm;
 
       &:after {
-        height: calc(#{$wheel-size-sm} + 10px);
-        width: calc(#{$wheel-size-sm} + 10px);
+        height: calc(#{$wheel-size-sm} + 16px);
+        width: calc(#{$wheel-size-sm} + 16px);
       }
 
     }
@@ -257,7 +261,7 @@
       left: calc(50% - 35px);
       border-left: 35px solid transparent;
       border-right: 35px solid transparent;
-      border-top: calc(#{$wheel-size-sm} / 2) solid $green-dark;
+      border-top: calc(#{$wheel-size-sm} / 2) solid $scale-field-color;
     }
   }
 }
@@ -278,8 +282,8 @@
       width: $wheel-size-md;
 
       &:after {
-        height: calc(#{$wheel-size-md} + 10px);
-        width: calc(#{$wheel-size-md} + 10px);
+        height: calc(#{$wheel-size-md} + 16px);
+        width: calc(#{$wheel-size-md} + 16px);
       }
 
     }
@@ -290,7 +294,7 @@
       left: calc(50% - 35px);
       border-left: 35px solid transparent;
       border-right: 35px solid transparent;
-      border-top: calc(#{$wheel-size-md} / 2) solid $green-dark;
+      border-top: calc(#{$wheel-size-md} / 2) solid $scale-field-color;
     }
   }
 }

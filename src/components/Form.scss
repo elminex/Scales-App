@@ -6,12 +6,71 @@
   width: 100%;
   position: relative;
 
-  &__type-wrapper {
-    display: flex;
-    justify-content: flex-end;
-    position: absolute;
-    top: -72px;
-    right: 0;
+  &__type {
+    &-button {
+      @include button;
+      text-align: center;
+      padding: 0 4px;
+
+      &:first-of-type {
+        margin-right: 16px;
+      }
+
+      &-acc {
+        fill: black;
+        height: calc(100% - 8px);
+        margin: 1px 2px;
+
+        &.sharp {
+          &:first-of-type {
+            position: relative;
+            top: 0px;
+          }
+
+          &:nth-of-type(2) {
+            position: relative;
+            top: 7px;
+          }
+
+          &:nth-of-type(3) {
+            position: relative;
+            top: -3px;
+          }
+        }
+
+        &.flat {
+          &:first-of-type {
+            position: relative;
+            top: 4px;
+          }
+
+          &:nth-of-type(2) {
+            position: relative;
+            top: -4px;
+          }
+
+          &:nth-of-type(3) {
+            position: relative;
+            top: 8px;
+          }
+        }
+      }
+    }
+
+    &-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      position: absolute;
+      top: -72px;
+      right: 0;
+    }
+
+    &-text {
+      position: absolute;
+      top: -30px;
+      transform: translateX(-50%);
+      font-size: 1.3rem;
+    }
   }
 
   &__number {
@@ -40,21 +99,10 @@
       }
     }
 
-    &-label {
-      width: 60px;
-      height: 40px;
+    &-button {
+      @include button;
       margin-bottom: 18px;
-      display: flex;
-      justify-content: center;
       align-items: center;
-      background-color: $green;
-      border-radius: 16px;
-      font-size: 1.5rem;
-
-      &.selected {
-        background-color: $blue;
-        color: $yellow;
-      }
     }
 
   }
@@ -62,32 +110,6 @@
   &__input {
     opacity: 0;
     width: 1px;
-
-    &-acc {
-      fill: black;
-      height: calc(100% - 8px);
-      padding: 4px;
-
-      &.selected {
-        fill: $yellow;
-      }
-    }
-
-    &-label-acc {
-      width: 72px;
-      height: 48px;
-      border-radius: 16px;
-      background-color: $green;
-      text-align: center;
-
-      &.selected {
-        background-color: $blue;
-      }
-
-      &:first-of-type {
-        margin-right: 16px;
-      }
-    }
   }
 }
 
@@ -120,40 +142,25 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px), screen and (orientation: landscape) {
   .form {
     padding-right: 16px;
+    padding-top: 32px;
 
-    &__type-wrapper {
-      justify-content: center;
-      position: static;
-      margin-bottom: 16px;
-    }
+    &__type {
+      &-wrapper {
+        justify-content: center;
+        position: static;
+        margin-bottom: 16px;
+      }
 
-    &__number-wrapper {
-      flex-direction: column;
-    }
-
-    &__number-container li {
-      flex: 0 0 33%;
-      margin-right: 0;
-      justify-content: center;
-    }
-
-    &__number-text {
-      margin-bottom: 16px;
-    }
-  }
-}
-
-@media screen and (orientation: landscape) {
-  .form {
-    padding-right: 16px;
-
-    &__type-wrapper {
-      justify-content: center;
-      position: static;
-      margin-bottom: 16px;
+      &-text {
+        position: static;
+        transform: none;
+        top: 0;
+        line-height: 40px;
+        padding-right: 16px;
+      }
     }
 
     &__number-wrapper {

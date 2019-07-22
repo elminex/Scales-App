@@ -9,3 +9,24 @@ $wheel-size-xs: 90vw;
 $wheel-size-sm: 350px;
 $wheel-size-md: 450px;
 $wheel-size-lg: 600px;
+
+$scale-field-color: $yellow;
+$wheel-bg-color: $blue;
+$wheel-text: $blue;
+
+@mixin button {
+  width: 60px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border: 2px solid $green;
+  border-radius: 16px;
+  font-size: 1.5rem;
+  transition: all .2s;
+
+  &.selected {
+    animation: animate-size .3s;
+    background-color: $green;
+  }
+}

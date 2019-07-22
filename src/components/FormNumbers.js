@@ -7,7 +7,7 @@ const FormNumbers = ({ countChange, signsCount }) => {
     <ul className="form__number-container">
       {buttons.map((number, index) => (
         <li key={index}>
-          <label className={number === 5 ? `${signsCount === 5 ? 'form__number-label selected' : 'form__number-label'}` : 'form__number-label'} htmlFor={`AccCount${number}`}>
+          <label className={number === 5 ? `${signsCount === 5 ? 'form__number-button selected' : 'form__number-button'}` : 'form__number-button'} htmlFor={`AccCount${number}`}>
             {number}
             <input id={`AccCount${number}`} className="form__input" type="radio" value={number} name="liczba znaków" onChange={countChange} />
           </label>

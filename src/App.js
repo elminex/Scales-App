@@ -5,7 +5,6 @@ import Staff from './components/Staff';
 import Form from './components/Form';
 import Modal from './components/Modal';
 import Header from './components/Header';
-import './style.scss';
 
 class App extends React.Component {
   constructor(props) {
@@ -59,7 +58,7 @@ class App extends React.Component {
   }
 
   accClickHandle(sign, target) {
-    target.classList.toggle('selected');
+    target.classList.toggle('selected-sign');
     if (this.clickedArr.includes(sign)) {
       this.clickedArr = this.clickedArr.filter(value => value !== sign);
     } else {

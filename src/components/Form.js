@@ -10,11 +10,16 @@ const Form = ({
 }) => (
   <form className="form">
     <div className="form__type-wrapper">
-      <label className={sharpsSelected ? 'form__input-label-acc selected' : 'form__input-label-acc sharp'} htmlFor="SharpsOnly">
+      <span className="form__type-text">Gamy z:</span>
+      <label className={sharpsSelected ? 'form__type-button selected' : 'form__type-button'} htmlFor="SharpsOnly">
+        <Sharp sharpsSelected={sharpsSelected} />
+        <Sharp sharpsSelected={sharpsSelected} />
         <Sharp sharpsSelected={sharpsSelected} />
         <input id="SharpsOnly" className="form__input" type="checkbox" name="znaki" value="sharps" checked={sharpsSelected} onChange={typeChange} />
       </label>
-      <label className={flatsSelected ? 'form__input-label-acc selected' : 'form__input-label-acc flat'} htmlFor="FlatsOnly">
+      <label className={flatsSelected ? 'form__type-button selected' : 'form__type-button'} htmlFor="FlatsOnly">
+        <Flat flatsSelected={flatsSelected} />
+        <Flat flatsSelected={flatsSelected} />
         <Flat flatsSelected={flatsSelected} />
         <input id="FlatsOnly" className="form__input" type="checkbox" name="znaki" value="flats" checked={flatsSelected} onChange={typeChange} />
       </label>

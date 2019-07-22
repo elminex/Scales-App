@@ -7,6 +7,7 @@
   background-color: $background;
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 24px;
 
   .container {
     display: flex;
@@ -21,7 +22,7 @@
     &-wrapper {
       height: 100%;
       min-height: 200px;
-      max-height: 300px;
+      max-height: 250px;
       max-width: 400px;
     }
   }
@@ -55,21 +56,14 @@
   }
 }
 
-@media screen and (min-width: 768px) {
-  .header__title {
-    padding-top: 80px;
-    font-size: 3rem;
+@media screen and (min-width: 768px), screen and (orientation: landscape) {
+  .header {
+    margin-bottom: 24px;
 
-    &--size {
-      font-size: 4rem;
+    &__title {
+      padding-top: 80px;
+      font-size: 3rem;
     }
-  }
-}
-
-@media screen and (orientation: landscape) {
-  .header__title {
-    padding-top: 80px;
-    font-size: 3rem;
 
     &--size {
       font-size: 4rem;
