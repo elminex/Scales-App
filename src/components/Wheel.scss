@@ -77,6 +77,7 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 5;
+    filter: drop-shadow(3px 3px 1px rgba(0,0,0,.5));
   }
 
   &__wrapper {
@@ -85,6 +86,8 @@
     height: $wheel-size-xs;
     border-radius: 50%;
     position: relative;
+    box-shadow: 8px 8px 3px grey;
+    margin-bottom: 32px;
   }
 
   &__scale-name {
@@ -115,7 +118,7 @@
       top: -8px;
       left: -8px;
       box-sizing: border-box;
-      border: 8px solid rgb(65, 65, 65);
+      border: 8px solid $wheel-bg-color;
       border-radius: 50%;
       box-shadow: inset 0px 0px 9px 0px black;
       z-index: 4;

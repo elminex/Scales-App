@@ -5,12 +5,13 @@
   flex-direction: column;
   width: 100%;
   position: relative;
+  margin-bottom: 16px;
 
   &__type {
     &-button {
       @include button;
       text-align: center;
-      padding: 0 4px;
+      padding: 3px 6px;
 
       &:first-of-type {
         margin-right: 16px;
@@ -19,12 +20,13 @@
       &-acc {
         fill: black;
         height: calc(100% - 8px);
-        margin: 1px 2px;
 
         &.sharp {
+          margin: 0px 2px;
+
           &:first-of-type {
             position: relative;
-            top: 0px;
+            top: 1px;
           }
 
           &:nth-of-type(2) {
@@ -34,24 +36,26 @@
 
           &:nth-of-type(3) {
             position: relative;
-            top: -3px;
+            top: -2px;
           }
         }
 
         &.flat {
+          margin: 0 1px;
+
           &:first-of-type {
             position: relative;
-            top: 4px;
+            top: 6px;
           }
 
           &:nth-of-type(2) {
             position: relative;
-            top: -4px;
+            top: -2px;
           }
 
           &:nth-of-type(3) {
             position: relative;
-            top: 8px;
+            top: 10px;
           }
         }
       }
@@ -142,7 +146,8 @@
   }
 }
 
-@media screen and (min-width: 768px), screen and (orientation: landscape) {
+@media screen and (min-width: 768px),
+screen and (orientation: landscape) {
   .form {
     padding-right: 16px;
     padding-top: 32px;

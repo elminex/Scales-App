@@ -24,13 +24,15 @@
       min-height: 200px;
       max-height: 250px;
       max-width: 400px;
+      flex: 0 0 50%
     }
   }
 
   &__title {
-    padding: 16px;
+    padding: 16px 16px 0 0;
     margin: 0;
     text-align: right;
+    flex: 0 0 50%;
 
     &--rotation {
       transform: rotate(-90deg);

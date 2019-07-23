@@ -9,7 +9,8 @@ const Header = () => (
         <img className="header__logo" src={logo} alt="Logo" />
       </div>
       <h1 className="header__title">
-        zaGRAJ <span className="header__title--rotation">w</span>
+        {'zaGRAJ '}
+        <span className="header__title--rotation">w</span>
         <br />
         <span className="header__title--size">GAMY</span>
       </h1>

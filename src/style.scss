@@ -1,8 +1,13 @@
 @import 'normalize.css';
 @import 'variables';
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 * {
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
 }
 
 .container {
@@ -50,7 +55,8 @@
   }
 }
 
-@media screen and (min-width: 768px), screen and (orientation: landscape) {
+@media screen and (min-width: 768px),
+screen and (orientation: landscape) {
   .inner-container {
     flex-direction: row;
     align-items: flex-start;

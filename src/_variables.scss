@@ -11,8 +11,8 @@ $wheel-size-md: 450px;
 $wheel-size-lg: 600px;
 
 $scale-field-color: $yellow;
-$wheel-bg-color: $blue;
-$wheel-text: $blue;
+$wheel-bg-color: rgb(83, 62, 62);
+$wheel-text: #015264;
 
 @mixin button {
   width: 60px;
@@ -24,6 +24,7 @@ $wheel-text: $blue;
   border-radius: 16px;
   font-size: 1.5rem;
   transition: all .2s;
+  box-shadow: 2px 2px 3px grey;
 
   &.selected {
     animation: animate-size .3s;
