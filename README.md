@@ -8,7 +8,7 @@ A simple scale drawing machine for people who are learning music. App draws a sc
 
 ### Using
 
-Working app is available [here](https://elminex.github.io/gamy-react).
+Working app is available [here](https://elminex.github.io/Scales-App/).
 
 Source code is available [here](https://github.com/elminex/gamy-react/tree/source/).
 
