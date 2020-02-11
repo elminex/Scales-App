@@ -29,5 +29,6 @@ $wheel-text: #015264;
   &.selected {
     animation: animate-size .3s;
     background-color: $green;
+    box-shadow: 1px 1px 1px grey;
   }
 }
